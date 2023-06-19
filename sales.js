@@ -314,6 +314,7 @@ const lima = {
             const li=document.createElement("li");
             li.textContent = openHours[i] + " sold " + this.cookiesPerHour[i] + " cookies. Had " + this.custPerHour[i] + " customers.";
             ul.appendChild(li);
+
             console.log(openHours +" HELO" + this.cookiesPerHour)
         }
         console.log(this.totalDailyCookies + " total sold")
@@ -327,6 +328,7 @@ const lima = {
 
     
 }
+
 console.log(seattle)
 seattle.render()
 tokyo.render()
