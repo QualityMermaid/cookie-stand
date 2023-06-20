@@ -26,20 +26,28 @@ h1{
     background-color: #068DA9;
     color: #7E1717 ;
     font-family: 'Handlee', cursive;
+    text-align: center;
 }
 
 h2{
+    background-color: #E55807;
+    color: wheat;
+    text-align: center;
 
 }
 
 nav{
     background-color: #5C8984;
+    text-align: center;
 }
 
 .logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
-    position: relative;
     left: 30px;
-    border-radius: 3px;
-
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border-style: double;
 }

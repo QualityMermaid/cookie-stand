@@ -329,12 +329,16 @@ const lima = {
     
 }
 
+const allShops = [seattle, tokyo, dubai, paris, lima];
+
+function renderAllShops(){
+    for (let i = 0; i < allShops.length; i++){
+        allShops[i].render();
+    }
+}
 console.log(seattle)
-seattle.render()
-tokyo.render()
-dubai.render()
-paris.render()
-lima.render()
+renderAllShops()
+
 
 const h4 = document.createElement("h4");
     h4.textContent = "Total Salmon Cookies sold World Wide " + totalCookiesSoldWorldWide + "!";
@@ -345,16 +349,3 @@ const h4 = document.createElement("h4");
 function randomCust(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-
-
-
-
-
-// // Display output of each location
-// for (let i = 0; i < openHours.length; i++){
-//     const li=document.createElement("li");
-//     li.textContent = openHours[i];
-//     ul.appendChild(li);
-//     console.log(openHours +" HELO")
-// }
