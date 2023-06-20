@@ -43,9 +43,7 @@ function Store(storeName, minCust, maxCust, avgCookiePerCust){
     this.calcCustomersEachHour();
     this.cookiesPerHour = [];
     this.calcCookiesEachHour();
-    // this.calcDailyCookies()
-    this.totalDailyCookies = this.calcDailyCookies()
-    ;
+    this.totalDailyCookies = this.calcDailyCookies();
 
     this.render();
 }
@@ -53,7 +51,6 @@ function Store(storeName, minCust, maxCust, avgCookiePerCust){
 Store.prototype.calcCustomersEachHour = function(){
     for(let i=0; i < openHours.length; i++){
         this.custPerHour.push(randomCust(this.minCust,this.maxCust))
-        // console.log(this.custPerHour + "Im here Seattle")
     }    
 }
 
@@ -76,7 +73,6 @@ Store.prototype.calcDailyCookies = function(){
         totalDailyCookies += this.cookiesPerHour[i]
     }
     return totalDailyCookies
-    console.log(typeof(totalDailyCookies) + " cookies here!!")
 }
 
 
@@ -134,7 +130,3 @@ const dubai = new Store("dubai", 11, 38, 3.7,)
 const paris = new Store("paris", 20, 38, 2.3,)
 const lima = new Store("lima", 2, 16, 4.6,)
 hourTotals([seattle,tokyo,dubai,paris,lima])
-
-
-console.log(seattle);
-

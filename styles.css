@@ -18,10 +18,6 @@ body{
     background-color: #2CD3E1;
 }
 
-.tables{
-    background-color: aquamarine;
-}
-
 h1{
     background-color: #068DA9;
     color: #7E1717 ;
@@ -50,4 +46,29 @@ nav{
     margin-bottom: 1rem;
     object-fit: cover;
     border-style: double;
+}
+
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #2CD3E1;  
+    margin-bottom: 6rem;
+    height: auto;
+    width: 90%;
+    overflow-x: auto; 
+}
+
+
+th,
+td {
+    padding: .5rem;
+    
+}
+
+article{
+    width: 100%;
+    overflow-x: auto;
 }
