@@ -4,12 +4,32 @@ console.log("I am running my NEW Salmon script")
 
 const totalCookiesSold = 0
 const totalCookiesSoldWorldWide = 0
+const openHours = ["6am","7am","8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm"]
 
 const container = document.getElementById("container")
 const article = document.createElement("article");
-        container.appendChild(article);
+    container.appendChild(article);
 
-const openHours = ["6am","7am","8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm"]
+const table = document.createElement("table")
+    article.appendChild(table);
+
+    const tr = document.createElement("tr")
+    table.appendChild(tr)
+
+    const th = document.createElement("th")
+    th.textContent = "Shop Location";
+    tr.appendChild(th)
+
+    for(let i = 0; i < openHours.length; i++){
+        const td = document.createElement("td");
+        td.textContent = openHours[i];
+        tr.appendChild(td);
+    }
+    const td = document.createElement("td");
+        td.textContent = "Daily Location Total";
+        tr.appendChild(td);
+
+
 
 function Store(storeName, minCust, maxCust, avgCookiePerCust){
     
@@ -21,8 +41,9 @@ function Store(storeName, minCust, maxCust, avgCookiePerCust){
     this.calcCustomersEachHour();
     this.cookiesPerHour = [];
     this.calcCookiesEachHour();
-    // this.totalCookiesSold = this.totalCookiesSold;
-    this.totalCookiesSold();
+    // this.calcDailyCookies()
+    this.totalDailyCookies = this.calcDailyCookies()
+    ;
 
     this.render();
 }
@@ -30,7 +51,7 @@ function Store(storeName, minCust, maxCust, avgCookiePerCust){
 Store.prototype.calcCustomersEachHour = function(){
     for(let i=0; i < openHours.length; i++){
         this.custPerHour.push(randomCust(this.minCust,this.maxCust))
-        console.log(this.custPerHour + "Im here Seattle")
+        // console.log(this.custPerHour + "Im here Seattle")
     }    
 }
 
@@ -38,6 +59,7 @@ Store.prototype.calcCookiesEachHour = function(){
     for (let i = 0; i < openHours.length; i++){
         const oneHour = Math.ceil(this.custPerHour[i] * this.avgCookiePerCust);
         this.cookiesPerHour.push(oneHour);
+        this.totalCookiesSold += oneHour
     }
 }
 
@@ -46,20 +68,21 @@ function randomCust(min, max){
 
 }
 
-Store.prototype.totalCookiesSold = function(){
-    for( let i = 0; i < this.cookiesPerHour; i++)
-    this.totalCookiesSold += this.totalCookiesSold + [i]
-    console.log("total cookies sold " + this.totalCookiesSold)
+Store.prototype.calcDailyCookies = function(){
+    let totalDailyCookies = 0
+    for(let i = 0; i < this.cookiesPerHour.length; i++){
+        totalDailyCookies += this.cookiesPerHour[i]
+    }
+    return totalDailyCookies
+    console.log(typeof(totalDailyCookies) + " cookies here!!")
 }
+
 
 Store.prototype.render = function(){
     const containerElement = document.getElementById("container");
 
-    const article = document.createElement("article");
-    containerElement.appendChild(article);
-
-    const table = document.createElement("table")
-    article.appendChild(table);
+    // const article = document.createElement("article");
+    // containerElement.appendChild(article);
 
     const tr = document.createElement("tr")
     table.appendChild(tr)
@@ -73,6 +96,9 @@ Store.prototype.render = function(){
         td.textContent = this.cookiesPerHour[i];
         tr.appendChild(td);
     }
+    const td = document.createElement("td");
+    td.textContent = this.totalDailyCookies;
+    tr.appendChild(td);
 
 }
 
