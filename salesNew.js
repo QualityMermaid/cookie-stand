@@ -8,28 +8,30 @@ const openHours = ["6am","7am","8am","9am","10am","11am","12pm","1pm","2pm","3pm
 
 const container = document.getElementById("container")
 const article = document.createElement("article");
-    container.appendChild(article);
+container.appendChild(article);
 
 const table = document.createElement("table")
-    article.appendChild(table);
+article.appendChild(table);
 
-    const tr = document.createElement("tr")
-    table.appendChild(tr)
+const tr = document.createElement("tr")
+table.appendChild(tr)
+storeOpenHours()
 
-    const th = document.createElement("th")
-    th.textContent = "Shop Location";
-    tr.appendChild(th)
+function storeOpenHours(){
+const th = document.createElement("th")
+th.textContent = "Shop Location";
+tr.appendChild(th);
 
-    for(let i = 0; i < openHours.length; i++){
-        const td = document.createElement("td");
-        td.textContent = openHours[i];
-        tr.appendChild(td);
-    }
+for(let i = 0; i < openHours.length; i++){
     const td = document.createElement("td");
-        td.textContent = "Daily Location Total";
-        tr.appendChild(td);
+    td.textContent = openHours[i];
+    tr.appendChild(td);
+}
+}
 
-
+const td = document.createElement("td");
+    td.textContent = "Daily Location Total";
+    tr.appendChild(td);
 
 function Store(storeName, minCust, maxCust, avgCookiePerCust){
     
@@ -81,9 +83,6 @@ Store.prototype.calcDailyCookies = function(){
 Store.prototype.render = function(){
     const containerElement = document.getElementById("container");
 
-    // const article = document.createElement("article");
-    // containerElement.appendChild(article);
-
     const tr = document.createElement("tr")
     table.appendChild(tr)
 
@@ -102,19 +101,47 @@ Store.prototype.render = function(){
 
 }
 
-// for(let i = 0; i < openHours.length; i++){
-//     const td = document.createElement("td");
-//     td.textContent = openHours[i];
-//     tr.appendChild(td);
-// }
+
+
+function hourTotals(seattle,tokyo,dubai,paris,lima){
+
+    const tr = document.createElement("tr")
+    table.appendChild(tr)
+
+    const th = document.createElement("th")
+    th.textContent = "Totals";
+    tr.appendChild(th);
+
+
+    for(let i = 0; i < openHours.length; i++){
+        const td = document.createElement("td");
+        // td.textContent += seattle.cookiesPerHour[i];
+        let totalHourCookiesSold = seattle.cookiesPerHour[i]
+        totalHourCookiesSold += tokyo.cookiesPerHour[i];
+        totalHourCookiesSold += dubai.cookiesPerHour[i];
+        totalHourCookiesSold += paris.cookiesPerHour[i];
+        totalHourCookiesSold += lima.cookiesPerHour[i];
+        td.textContent = totalHourCookiesSold
+        tr.appendChild(td);
+    }
+    const td = document.createElement("td");
+    let totalGlobalSales = seattle.totalDailyCookies
+    totalGlobalSales += tokyo.totalDailyCookies
+    totalGlobalSales += dubai.totalDailyCookies
+    totalGlobalSales += paris.totalDailyCookies
+    totalGlobalSales += lima.totalDailyCookies
+    td.textContent = totalGlobalSales
+    tr.appendChild(td);
+    
+}
 
 const seattle = new Store("seattle", 23, 65, 6.3,)
 const tokyo = new Store("tokyo", 3, 24, 1.2,)
 const dubai = new Store("dubai", 11, 38, 3.7,)
 const paris = new Store("paris", 20, 38, 2.3,)
 const lima = new Store("lima", 2, 16, 4.6,)
+hourTotals(seattle,tokyo,dubai,paris,lima)
 
-// let num = randomCust(3,19)
-// console.log(num)
+
 console.log(seattle);
 
