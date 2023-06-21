@@ -1,13 +1,42 @@
 /* colour pallet idea https://colorhunt.co/palette/ecf8f9068da97e1717e55807 */
 /* #5C8984 dark green*/
 
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .sale-data{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-*{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #5C8984;
+    border: 1px solid black;
+    font-family: cursive;
+    font-size: 2rem;
+
 }
+
+li{
+    text-align: center;
+    border: 1px solid black;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
 
 body{
     background-color: #ECF8F9;
@@ -23,19 +52,17 @@ h1{
     color: #7E1717 ;
     font-family: 'Handlee', cursive;
     text-align: center;
+    font-size: 5rem;
 }
 
 h2{
-    background-color: #E55807;
-    color: wheat;
+    background-color: #068DA9;
+    color: black;
     text-align: center;
+
 
 }
 
-nav{
-    background-color: #5C8984;
-    text-align: center;
-}
 
 .logo{
     display: block;
@@ -52,13 +79,14 @@ nav{
 table,
 th,
 td {
+
     border: 1px solid black;
     border-collapse: collapse;
     background-color: #2CD3E1;  
     margin-bottom: 6rem;
     height: auto;
-    width: 90%;
-    overflow-x: auto; 
+    
+
 }
 
 
@@ -68,7 +96,27 @@ td {
     
 }
 
-article{
+table{
+
     width: 100%;
+    /* overflow-x: auto; */
+}
+
+article{
     overflow-x: auto;
+
+}
+
+
+a:hover{
+    background-color: #FF6000;
+}
+
+.active{
+    background-color: #7E1717;
+    color: #ECF8F9;
+}
+
+#container{
+    padding: 20px;
 }

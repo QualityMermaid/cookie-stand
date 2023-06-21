@@ -7,6 +7,11 @@ const totalCookiesSoldWorldWide = 0
 const openHours = ["6am","7am","8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm"]
 
 const container = document.getElementById("container")
+
+const h2 = document.createElement("h2");
+h2.textContent = "Sales"
+container.appendChild(h2);
+
 const article = document.createElement("article");
 container.appendChild(article);
 
@@ -50,7 +55,7 @@ function Store(storeName, minCust, maxCust, avgCookiePerCust){
 
 Store.prototype.calcCustomersEachHour = function(){
     for(let i=0; i < openHours.length; i++){
-        this.custPerHour.push(randomCust(this.minCust,this.maxCust))
+        this.custPerHour.push(randomCust(this.minCust,this.maxCust));
     }    
 }
 
@@ -58,7 +63,7 @@ Store.prototype.calcCookiesEachHour = function(){
     for (let i = 0; i < openHours.length; i++){
         const oneHour = Math.ceil(this.custPerHour[i] * this.avgCookiePerCust);
         this.cookiesPerHour.push(oneHour);
-        this.totalCookiesSold += oneHour
+        this.totalCookiesSold += oneHour;
     }
 }
 
