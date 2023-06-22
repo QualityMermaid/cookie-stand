@@ -4,6 +4,9 @@ console.log("I am running main page script")
 
 const openHours = ["6am","7am","8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm"]
 
+const openFrom = openHours[0];
+const closeAt = openHours[openHours.length-1];
+
 let storeLocations = [
     new Store("Seattle","13 New Bridge", "seattle.jpeg", openHours ),
     new Store("Tokyo","46 White Lane","tokyo.jpeg", openHours ),
@@ -18,6 +21,10 @@ const container = document.getElementById("container")
 const h2 = document.createElement("h2")
 h2.textContent = "Store Locations"
 container.appendChild(h2);
+
+const div = document.createElement("div")
+div.textContent = `Gloable opening hours ${openFrom} till ${closeAt}`
+container.appendChild(div)
 
 // const article = document.createElement("article");
 // container.appendChild(article);
@@ -52,10 +59,6 @@ Store.prototype.render = function(){
     p.textContent = this.storeAddress
     p.setAttribute("class", "storeAddress")
     article.appendChild(p)
-
-    const div = document.createElement("div")
-    div.textContent = this.openHours
-    article.appendChild(div)
 
     const img = document.createElement("img")
     img.setAttribute("src", this.imageUrl)
