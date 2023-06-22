@@ -26,16 +26,6 @@ const div = document.createElement("div")
 div.textContent = `Gloable opening hours ${openFrom} till ${closeAt}`
 container.appendChild(div)
 
-// const article = document.createElement("article");
-// container.appendChild(article);
-
-// const div = document.createElement("div")
-// article.appendChild(div);
-
-// const ul = document.createElement("ul");
-// div.appendChild(ul);
-
-// let renderStoreList(storeLocations)
 
 function Store(storeName,storeAddress,imgFileName, times){
     
@@ -75,21 +65,3 @@ function renderAllShops(){
     }
 }
 renderAllShops()
-
-
-// function renderStoreList(storeLocations){
-//     console.log(storeLocations.length)
-//     console.log(storeLocations)
-
-//     for(let i = 0; i < storeLocations.length; i++){
-//         const li = document.createElement("li")
-//         li.textContent = storeLocations[i].storeName;
-//         // const img = document.createElement("img")
-//         // img = storeLocations[i].image;
-//         console.log(storeLocations[i].storeName)
-//         ul.appendChild(li);  
-//         // ul.appendChild(img);  
-//     }
-// }
-
-
