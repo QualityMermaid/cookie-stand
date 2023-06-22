@@ -13,6 +13,7 @@ h2.textContent = "Sales"
 container.appendChild(h2);
 
 const article = document.createElement("article");
+article.setAttribute("class","table-article")
 container.appendChild(article);
 
 const table = document.createElement("table")
