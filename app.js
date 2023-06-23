@@ -19,12 +19,13 @@ let storeLocations = [
 const container = document.getElementById("container")
 
 const h2 = document.createElement("h2")
-h2.textContent = "Store Locations"
+h2.textContent = "---Store Locations---"
 container.appendChild(h2);
 
-const div = document.createElement("div")
-div.textContent = `Gloable opening hours ${openFrom} till ${closeAt}`
-container.appendChild(div)
+const p = document.createElement("p")
+p.classList.add("globleHours");
+p.textContent = `Gloable opening hours ${openFrom} till ${closeAt}`
+container.appendChild(p)
 
 
 function Store(storeName,storeAddress,imgFileName, times){

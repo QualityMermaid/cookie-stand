@@ -3,9 +3,9 @@
 
 *{
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #210000;
     margin: 0;
     padding: 0;
-    color: black;
     box-sizing: border-box;
 }
 
@@ -32,7 +32,6 @@
 
 .header-container li a {
     display: block;
-    /* color: black; */
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -45,7 +44,6 @@
 
 body{
     background-color: #ECF8F9;
-    color: black;
 }
 
 .boxes{
@@ -62,8 +60,20 @@ h1{
 
 h2{
     background-color: #068DA9;
-    color: black;
+    color: #2CD3E1;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin: auto;
+    display: inline;
+    margin-bottom: 1rem;
+}
+
+.globleHours{
+    font-weight: 800;
+    color: #FF6000;
+    margin: 1rem;
+    border: 1px solid #000;
     text-align: center;
+    /* display: inline; */
 }
 
 h3{
@@ -117,7 +127,7 @@ td {
 table{
 
     width: 100%;
-    /* overflow-x: auto; */
+    margin-top: 1rem;
 }
 
 .table-article{
@@ -154,20 +164,48 @@ a:hover{
 }
 
 .shop-image{
-    width: 90%;
+    width: 80%;
     height: auto;
+    /* margin-bottom: 1rem; */
+    /* object-fit: cover; */
     
 }
 
 form{
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 2px solid tomato;
     width: 90%;
+    background-color: #fed7d7;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     font-size: 1rem;
+    justify-content: space-between;
 }
 
-.submit-button{
-    background-color: #FF6000;
-    width: 10%;
+.formLegend{
+    color: #068DA9;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 1rem;
 }
+
+label{
+    color: #7E1717;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.submit-button{
+    margin: auto;
+    margin-top: 1rem;
+    background-color: #FF6000;
+    width: 100px;
+    font-size: 1rem;
+
+}
+
