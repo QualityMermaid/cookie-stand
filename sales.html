@@ -15,7 +15,7 @@
 <body>
     <header class="header-container">
         <h1> Pat's Salmon Cookies</h1>
-        <img class="logo" src="images/pat-salmon.png" alt="pat's salmon cookies logo">
+        <img class="logo" src="images/salmoncookielogo.png" alt="pat's salmon cookies logo">
 
         <nav>
             <ul>
@@ -32,24 +32,25 @@
     <main>
         <form id="addNewStore">
             <fieldset>
-                <legend class="formLegend"> New Store</legend>
-                <label for="storeName">Shop Location</label>
-                <input type="text" id="storeName" name="storeLocation" placeholder="enter city store location">
+                <legend> New Store</legend>
+                <section>
+                    <label for="storeName">Shop Location:</label>
+                    <input type="text" id="storeName" name="storeLocation" placeholder="enter city store location">
 
-                <label for="storeAddress">Address</label>
-                <input type="text" id="storeAddress" name="storeAddress" placeholder="enter store address">
+                    <label for="storeAddress">Address:</label>
+                    <input type="text" id="storeAddress" name="storeAddress" placeholder="enter store address">
 
-                <label for="minCust">Min Customer Per Hour</label>
-                <input type="number" id="minCust" name="storeMinCust" min="0">
-            
+                    <label for="minCust">Min Customer Per Hour:</label>
+                    <input type="number" id="minCust" name="storeMinCust" min="0">
+                
 
-                <label for="maxCust">Max Customer Per Hour</label>
-                <input type="number" id="maxCust" name="storeMaxCust" min="0">
+                    <label for="maxCust">Max Customer Per Hour:</label>
+                    <input type="number" id="maxCust" name="storeMaxCust" min="0">
 
-                <label for="avgCookiePerCust">Average Cookies sold Per Hour</label>
-                <input type="number" id="avgCookiePerCust" name="avgCookiePerCust"
-                step="0.1" min="0">
-
+                    <label for="avgCookiePerCust">Average Cookies sold Per Hour:</label>
+                    <input type="number" id="avgCookiePerCust" name="avgCookiePerCust"
+                    step="0.1" min="0">
+                </section>
 
             </fieldset>
             <button type="submit" class="submit-button">SUBMIT</button>

@@ -37,8 +37,13 @@
     text-decoration: none;
 }
 
-.main-container{
+main div{
     width: 90%;
+
+}
+
+div h2{
+    margin: 1rem;
 }
 
 
@@ -79,28 +84,21 @@ h2{
 h3{
     text-align: left;
     font-size: 1.5rem;
-    font-weight: 800;
-    margin: 1rem;
-    padding: 0.5rem 1rem;
-
-    
+    font-weight: 800;    
 }
 
 .storeAddress{
     margin: 1rem;
     display: flex;
-
 }
 
 .logo{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 20%;
     left: 30px;
-    margin-bottom: 1rem;
     object-fit: cover;
-    border-style: double;
 }
 
 
@@ -125,20 +123,21 @@ td {
 }
 
 table{
-
-    width: 100%;
     margin-top: 1rem;
+    /* margin: 1rem; */
 }
 
 .table-article{
     overflow-x: auto;
+    width: 100%;
+    margin: 1rem;
 
 }
 
 .article-content{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin: 1rem;
 }
 
@@ -185,18 +184,31 @@ form{
     justify-content: space-between;
 }
 
-.formLegend{
+fieldset Legend{
     color: #068DA9;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-left: 1rem;
+
+}
+
+fieldset section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px;
+    padding-bottom: 10px;
 }
 
 label{
     color: #7E1717;
     margin-left: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+}
+
+fieldset input{
+    margin: 2px;
+    margin-left: 30px;
+    margin-right: 30px;
+    align-items: inherit;
 }
 
 
@@ -209,3 +221,23 @@ label{
 
 }
 
+
+footer{
+    background-color: #068DA9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;   
+}
+footer h4{
+    color: white;
+    font-family:fantasy;
+    font-size: 1.5rem;
+    margin: auto;
+}
+
+footer li{
+    color: white;
+    list-style: none;
+
+}
