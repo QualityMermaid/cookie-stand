@@ -2,6 +2,24 @@
 
 console.log("I am running main page script")
 
+
+
+let coll = document.getElementsByClassName("collapsible");
+
+for (let i = 0; i < coll.length; i++) {
+coll[i].addEventListener("click", function() {
+    console.log("clicked")
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    if (content.style.display === "block") {
+    content.style.display = "none";
+    } else {
+    content.style.display = "block";
+    }
+});
+}
+
+
 const openHours = ["6am","7am","8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm"]
 
 const openFrom = openHours[0];
@@ -17,10 +35,6 @@ let storeLocations = [
 
 
 const container = document.getElementById("container")
-
-const h2 = document.createElement("h2")
-h2.textContent = "---Store Locations---"
-container.appendChild(h2);
 
 const p = document.createElement("p")
 p.classList.add("globleHours");
